@@ -129,6 +129,7 @@ nnoremap <C-l> <C-w>l
 
 " Disable autoindenting
 nnoremap <leader>noindent :setl noai nocin nosi inde=<CR>
+
 " Color scheme
 colorscheme molokai
 
