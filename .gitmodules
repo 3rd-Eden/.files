@@ -1,0 +1,3 @@
+[submodule "vim/.vim/rrb.vim"]
+	path = vim/.vim/rrb.vim
+	url = https://github.com/mkitt/browser-refresh.vim.git
