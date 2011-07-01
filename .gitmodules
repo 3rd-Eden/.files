@@ -4,3 +4,6 @@
 [submodule "vim/.vim/bundle/browser-refresh"]
 	path = vim/.vim/bundle/browser-refresh
 	url = https://github.com/mkitt/browser-refresh.vim.git
+[submodule "vim/.vim/bundle/snipmate-nodejs"]
+	path = vim/.vim/bundle/snipmate-nodejs
+	url = https://github.com/jamescarr/snipmate-nodejs.git
