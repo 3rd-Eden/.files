@@ -7,3 +7,18 @@
 [submodule "vim/.vim/bundle/snipmate-nodejs"]
 	path = vim/.vim/bundle/snipmate-nodejs
 	url = https://github.com/jamescarr/snipmate-nodejs.git
+[submodule "vim/.vim/bundle/javascript-syntax"]
+	path = vim/.vim/bundle/javascript-syntax
+	url = https://github.com/pangloss/vim-javascript.git
+[submodule "vim/.vim/bundle/zen-coding"]
+	path = vim/.vim/bundle/zen-coding
+	url = https://github.com/mattn/zencoding-vim.git
+[submodule "vim/.vim/bundle/surround"]
+	path = vim/.vim/bundle/surround
+	url = https://github.com/tpope/vim-surround
+[submodule "vim/.vim/bundle/delimitMate"]
+	path = vim/.vim/bundle/delimitMate
+	url = https://github.com/Raimondi/delimitMate.git
+[submodule "vim/.vim/bundle/supertab"]
+	path = vim/.vim/bundle/supertab
+	url = https://github.com/ervandew/supertab.git
