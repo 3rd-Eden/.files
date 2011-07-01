@@ -8,6 +8,7 @@ call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 
 filetype plugin indent on
+:filetype plugin on
 
 " Omni completion
 set ofu=syntaxcomplete#Complete
@@ -129,6 +130,9 @@ nnoremap <C-l> <C-w>l
 
 " Disable autoindenting
 nnoremap <leader>noindent :setl noai nocin nosi inde=<CR>
+
+" map refresh running browser to r
+nnoremap <silent><leader>r :RRB<CR>
 
 " Color scheme
 colorscheme molokai
