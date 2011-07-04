@@ -34,3 +34,9 @@
 [submodule "vim/.vim/bundle/fugitive"]
 	path = vim/.vim/bundle/fugitive
 	url = https://github.com/tpope/vim-fugitive
+[submodule "vim/.vim/bundle/css3-syntax"]
+	path = vim/.vim/bundle/css3-syntax
+	url = https://github.com/hail2u/vim-css3-syntax.git
+[submodule "vim/.vim/bundle/molokai-color"]
+	path = vim/.vim/bundle/molokai-color
+	url = https://github.com/tomasr/molokai.git
