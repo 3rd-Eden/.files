@@ -26,6 +26,7 @@ set shiftwidth=2
 set softtabstop=2
 set expandtab
 
+set title
 set clipboard=unnamed
 set encoding=utf-8
 set scrolloff=3
@@ -41,6 +42,10 @@ set gdefault
 set ttyfast
 set ruler
 set backspace=indent,eol,start
+
+" set history and undo
+set history=1000
+set undolevels=1000
 
 " Status bar
 set laststatus=2
@@ -105,7 +110,6 @@ inoremap <up> <nop>
 inoremap <down> <nop>
 inoremap <left> <nop>
 inoremap <right> <nop>
-
 nnoremap j gj
 nnoremap k gk
 nnoremap <leader>1 yypVr=
@@ -129,7 +133,7 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
 " Disable autoindenting
-nnoremap <leader>noindent :setl noai nocin nosi inde=<CR>
+nnoremap <leader>ni :setl noai nocin nosi inde=<CR>
 
 " map refresh running browser to r
 nnoremap <silent><leader>r :RRB<CR>
