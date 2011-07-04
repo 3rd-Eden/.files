@@ -40,3 +40,6 @@
 [submodule "vim/.vim/bundle/molokai-color"]
 	path = vim/.vim/bundle/molokai-color
 	url = https://github.com/tomasr/molokai.git
+[submodule "vim/.vim/bundle/jade"]
+	path = vim/.vim/bundle/jade
+	url = https://github.com/digitaltoad/vim-jade.git
