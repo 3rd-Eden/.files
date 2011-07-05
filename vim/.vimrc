@@ -139,8 +139,13 @@ nnoremap <leader>ni :setl noai nocin nosi inde=<CR>
 " map refresh running browser to r
 nnoremap <silent><leader>r :RRB<CR>
 
-" Color scheme
+" Color scheme and highlighting
 colorscheme molokai
+
+hi ColorColumn ctermbg=236
+hi SpecialKey guifg=236
+hi NonText guifg=#444444 guibg=bg
+hi Todo gui=undercurl
 
 " Allow swtiching between relative or normal line numbers
 function! SwitchNumbering()
@@ -156,5 +161,16 @@ nmap <leader>nn :call SwitchNumbering()<CR>
 augroup mkd
   autocmd BufRead *.md  set ai formatoptions=tcroqn2 comments=n:&gt;
 augroup END
+
+" Move temporary files to ~/.vimtmp/ instead of current dir
+if ! isdirectory(expand('~/.vimtmp'))
+   call mkdir(expand('~/.vimtmp'))
+endif
+
+if isdirectory(expand('~/.vimtmp'))
+   set directory=~/.vimtmp
+else
+   set directory=.,/var/tmp,/tmp
+endif
 
 syntax on

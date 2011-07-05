@@ -43,3 +43,6 @@
 [submodule "vim/.vim/bundle/jade"]
 	path = vim/.vim/bundle/jade
 	url = https://github.com/digitaltoad/vim-jade.git
+[submodule "vim/.vim/bundle/easymotion"]
+	path = vim/.vim/bundle/easymotion
+	url = https://github.com/Lokaltog/vim-easymotion
