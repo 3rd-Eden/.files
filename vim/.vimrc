@@ -43,23 +43,12 @@ set ttyfast
 set ruler
 set backspace=indent,eol,start
 
-" set history and undo
-set history=1000
-set undolevels=1000
-
 " Status bar
 set laststatus=2
 set statusline=%F\ %m\ %{fugitive#statusline()}\ %y%=%l,%c\ %P
 
 " Line numbers relative to current position
 set relativenumber
-
-" Disable swap files
-set noswapfile
-
-" Enable undo after closing files, but keep the files away from VCSs
-set undofile
-set undodir=~/.vim/undo
 
 let mapleader = ","
 let g:gist_clip_command = 'pbcopy'
@@ -101,16 +90,6 @@ nnoremap <F2> :set invpaste paste?<CR>
 set pastetoggle=<F2>
 set showmode
 
-" Disable moving with arrow keys
-" noremap <up> <nop>
-" noremap <down> <nop>
-" noremap <left> <nop>
-" noremap <right> <nop>
-" noremap <up> <nop>
-" noremap <down> <nop>
-" noremap <left> <nop>
-" noremap <right> <nop>
-
 nnoremap j gj
 nnoremap k gk
 nnoremap <leader>1 yypVr=
@@ -124,6 +103,7 @@ nnoremap ; :
 nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
 nnoremap <leader>v V`]
 nnoremap <leader>ev <C-w><C-v><C-l>:e $MYVIMRC<cr>
+nnoremap <leader>sv :source $MYVIMRC<cr>
 nnoremap <leader>w <C-w>v<C-w>l
 nnoremap <leader>v :vs<CR>
 nnoremap <leader>h :split<CR>
@@ -141,11 +121,6 @@ nnoremap <silent><leader>r :RRB<CR>
 
 " Color scheme and highlighting
 colorscheme molokai
-
-hi ColorColumn ctermbg=236
-hi SpecialKey guifg=236
-hi NonText guifg=#444444 guibg=bg
-hi Todo gui=undercurl
 
 " Allow swtiching between relative or normal line numbers
 function! SwitchNumbering()
@@ -171,6 +146,38 @@ if isdirectory(expand('~/.vimtmp'))
    set directory=~/.vimtmp
 else
    set directory=.,/var/tmp,/tmp
+endif
+
+" Set history and undo
+set history=1000
+set undolevels=1000
+
+" Setup persistently store the undo folder
+if ! isdirectory(expand('~/.vimundo'))
+  call mkdir(expand('~/.vimundo'))
+endif
+
+" Set persistent undo
+set undodir=~/.vimundo
+set undofile
+
+" Dedicated settings for when a GUI is running
+if has('gui_running')
+  set guioptions-=T
+  set guioptions-=r
+  set guioptions-=l
+  set guioptions-=L
+  hi ColorColumn ctermbg=darkgrey guibg=#232526
+  hi SpecialKey guifg=#444444
+  hi NonText guifg=#444444 guibg=bg
+  hi Todo gui=undercurl
+endif
+
+if has('gui_macvim')
+  behave xterm
+  set selectmode=
+  set keymodel=
+  set mousemodel=popup_setpos
 endif
 
 syntax on
