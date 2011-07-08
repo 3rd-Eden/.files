@@ -46,3 +46,6 @@
 [submodule "vim/.vim/bundle/easymotion"]
 	path = vim/.vim/bundle/easymotion
 	url = https://github.com/Lokaltog/vim-easymotion
+[submodule "vim/.vim/bundle/flash"]
+	path = vim/.vim/bundle/flash
+	url = https://github.com/clones/vim-flash.git
