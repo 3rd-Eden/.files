@@ -132,6 +132,22 @@ function! SwitchNumbering()
 endfunction
 nmap <leader>nn :call SwitchNumbering()<CR>
 
+function! FixLeCode()
+  " replace in  =/==/===/=> without spaces, to wrap it with spaces.
+  :%s/\(!\|+\|-\|\.\|=\|<\|>\)\@<!\(=\|==\|===\|=>\)\( \|>\|=\)\@!/ \2 /g
+  :g/function/s/ = /=/g
+
+  " place spaces behind the comma:
+  " @TODO this will kill any split, explode, or mysql queries you might have
+  " :%s/, \@!/, /g
+
+  " No spaces @ EOL
+  :%s/\s\+$//g
+
+  " No braces on the next line
+  :g/^\s*function .\+)$/j
+endfunction
+
 " Markdown
 augroup mkd
   autocmd BufRead *.md  set ai formatoptions=tcroqn2 comments=n:&gt;
