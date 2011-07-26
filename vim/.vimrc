@@ -14,6 +14,10 @@ filetype plugin indent on
 set ofu=syntaxcomplete#Complete
 autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
 
+" Set the correct file types
+autocmd BufRead,BufNewFile,BufEnter *.json set ft=javascript
+autocmd BufRead,BufNewFile,BufEnter *.ejs set ft=html
+
 " Enable syntax highlighting
 syntax enable
 
@@ -82,13 +86,19 @@ set mouse=a
 " Show list chars
 set list
 
-" List chars same as Textmate
+" List invisible chars same as Textmate
 set listchars=tab:▸\ ,eol:¬
+noremap <leader>i :set list!<CR>
 
 " Make F2 toggle paste indenting with visual feedback
 nnoremap <F2> :set invpaste paste?<CR>
 set pastetoggle=<F2>
 set showmode
+
+" Make editing the .vimrc easier, with auto re-load on save
+autocmd! bufwritepost .vimrc source $MYVIMRC
+nnoremap <leader>ev <C-w><C-v><C-l>:e $MYVIMRC<cr>
+nnoremap <leader>sv :source $MYVIMRC<cr>
 
 nnoremap j gj
 nnoremap k gk
@@ -102,8 +112,7 @@ nnoremap ; :
 
 nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
 nnoremap <leader>v V`]
-nnoremap <leader>ev <C-w><C-v><C-l>:e $MYVIMRC<cr>
-nnoremap <leader>sv :source $MYVIMRC<cr>
+
 nnoremap <leader>w <C-w>v<C-w>l
 nnoremap <leader>v :vs<CR>
 nnoremap <leader>h :split<CR>
