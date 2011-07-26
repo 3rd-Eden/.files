@@ -6,7 +6,6 @@
 
 tempDir="/tmp/`whoami`/chrome-nightly/";
 baseURL="http://commondatastorage.googleapis.com/chromium-browser-continuous/Mac";
-dlURL="http://v12.lscache6.c.bigcache.googleapis.com/chromium-browser-continuous/Mac";
 baseName="chrome-mac";
 baseExt="zip";
 appName="Chromium.app";
@@ -57,7 +56,7 @@ end run'
 fi
 
 # Download it, but with the dedicated download location of the file
-curl -o $baseName.$baseExt "$dlURL/$latestVersion/$baseName.$baseExt";
+curl -L "$baseURL/$latestVersion/$baseName.$baseExt" > $baseName.$baseExt;
 unzip -qo $baseName.$baseExt;
 checkForErrors;
 
