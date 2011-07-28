@@ -49,3 +49,6 @@
 [submodule "vim/.vim/bundle/flash"]
 	path = vim/.vim/bundle/flash
 	url = https://github.com/clones/vim-flash.git
+[submodule "vim/.vim/bundle/perl"]
+	path = vim/.vim/bundle/perl
+	url = https://github.com/petdance/vim-perl.git
