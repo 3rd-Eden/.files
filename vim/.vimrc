@@ -12,9 +12,10 @@ filetype plugin indent on
 
 " Omni completion
 set ofu=syntaxcomplete#Complete
-autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
 
-" Set the correct file types
+" Auto commands for easier file editing
+autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType make setlocal noexpandtab
 autocmd BufRead,BufNewFile,BufEnter *.json set ft=javascript
 autocmd BufRead,BufNewFile,BufEnter *.ejs set ft=html
 
