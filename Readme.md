@@ -1,13 +1,15 @@
-#.files
+# .files
 
-## Configuring git
+Development files for daily usage.
 
-There are some global configuration options that needs to be set, we cannot
-include the `~/.gitconfig` in our repository as it contains our github username
-and private token.
+## build
 
-```
-git config --global core.editor /opt/local/bin/vim
-git config --global user.name = 'Arnout Kazemier'
-git config --global user.email = 'info@3rd-Eden.com'
-```
+Build scripts to ensure that my software is always up to date with the latest versions
+
+## git
+
+My global git configuration
+
+## vim
+
+vim configuration, configured for node.js and front end development.
