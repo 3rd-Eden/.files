@@ -10,3 +10,5 @@ LearnBoost
 EventSource
 WebKit
 param
+readyState
+XMLHttpRequest
