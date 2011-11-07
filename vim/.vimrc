@@ -19,7 +19,7 @@ autocmd FileType make setlocal noexpandtab
 autocmd BufRead,BufNewFile,BufEnter *.json set ft=javascript
 autocmd BufRead,BufNewFile,BufEnter *.ejs set ft=html
 autocmd BufRead,BufNewFile,BufEnter *.tt2 set ft=tt2html
-autocmd BufRead,BufNewFile,BufEnter */frags/**.html set ft=tt2
+autocmd BufRead,BufNewFile,BufEnter */templates-3.0/**.html set ft=tt2
 
 " Enable syntax highlighting
 syntax enable
@@ -79,7 +79,7 @@ vnoremap <tab> %
 
 " Wrap column settings
 set wrap
-set textwidth=79
+set textwidth=80
 set formatoptions=qrn1
 set colorcolumn=85
 
@@ -101,7 +101,7 @@ set showmode
 " Make editing the .vimrc easier, with auto re-load on save
 autocmd! bufwritepost .vimrc source $MYVIMRC
 nnoremap <leader>ev <C-w><C-v><C-l>:e $MYVIMRC<cr>
-nnoremap <leader>sv :source $MYVIMRC<cr>
+nnoremap <leader>sv :source $MYVIMRC<cr>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
 
 nnoremap j gj
 nnoremap k gk
@@ -144,6 +144,7 @@ function! SwitchNumbering()
 endfunction
 nmap <leader>nn :call SwitchNumbering()<CR>
 
+" atttempt to reformat horrible code
 function! FixLeCode()
   " replace in  =/==/===/=> without spaces, to wrap it with spaces.
   :%s/\(!\|+\|-\|\.\|=\|<\|>\)\@<!\(=\|==\|===\|=>\)\( \|>\|=\)\@!/ \2 /g
@@ -160,6 +161,15 @@ function! FixLeCode()
   :g/^\s*function .\+)$/j
 endfunction
 
+" Create a vim modeline
+function! AppendModeline()
+  let l:modeline = printf(" vim: set ts=%d sw=%d tw=%d",
+        \ &tabstop, &shiftwidth, &textwidth)
+  let l:modeline = substitute(&commentstring, "%s", l:modeline, "")
+  call append(line("^"), l:modeline)
+endfunction
+nnoremap <silent> <Leader>ml :call AppendModeline()<CR>
+
 " Markdown
 augroup mkd
   autocmd BufRead *.md  set ai formatoptions=tcroqn2 comments=n:&gt;
@@ -167,13 +177,13 @@ augroup END
 
 " Move temporary files to ~/.vimtmp/ instead of current dir
 if ! isdirectory(expand('~/.vimtmp'))
-   call mkdir(expand('~/.vimtmp'))
+  call mkdir(expand('~/.vimtmp'))
 endif
 
 if isdirectory(expand('~/.vimtmp'))
-   set directory=~/.vimtmp
+  set directory=~/.vimtmp
 else
-   set directory=.,/var/tmp,/tmp
+  set directory=.,/var/tmp,/tmp
 endif
 
 " Set history and undo
