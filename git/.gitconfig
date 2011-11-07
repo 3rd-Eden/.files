@@ -5,7 +5,7 @@
 
 ; Fix the editor path in Mac OSX lion and show whitespace
 [core]
-  editor = /opt/local/bin/vim
+  editor = /usr/bin/vim
   whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
 
 ; Setup some colors to make git commands a bit more readable
