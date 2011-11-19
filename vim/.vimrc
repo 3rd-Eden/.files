@@ -20,6 +20,7 @@ autocmd BufRead,BufNewFile,BufEnter *.json set ft=javascript
 autocmd BufRead,BufNewFile,BufEnter *.ejs set ft=html
 autocmd BufRead,BufNewFile,BufEnter *.tt2 set ft=tt2html
 autocmd BufRead,BufNewFile,BufEnter */templates-3.0/**.html set ft=tt2
+autocmd BufWritePre *.{php,py,pl,js,html} call StripTrailingWhite()
 
 " Enable syntax highlighting
 syntax enable
@@ -134,6 +135,24 @@ nnoremap <silent><leader>r :RRB<CR>
 " Color scheme and highlighting
 colorscheme molokai
 
+" TagList shortcuts
+map <leader>t :TlistToggle<CR>
+let Tlist_Sort_Type = "order"
+let Tlist_Use_SingleClick = 1
+let Tlist_Show_Menu = 1
+let Tlist_Exit_OnlyWindow = 1
+let Tlist_Enable_Fold_Column = 1
+let Tlist_Close_On_Select = 0
+let Tlist_Use_Right_Window = 0
+let Tlist_Process_File_Always=1
+let Tlist_Show_One_File=1
+let Tlist_Display_Prototype=1
+let Tlist_Max_Submenu_Items=50
+let Tlist_Max_Tag_Length=30
+
+" Search for diff separater stuff
+nnoremap <Leader>fd /^<<<<<<<\\|^=======\\|^>>>>>>><CR>
+
 " Allow swtiching between relative or normal line numbers
 function! SwitchNumbering()
   if &number && ! &relativenumber
@@ -144,7 +163,7 @@ function! SwitchNumbering()
 endfunction
 nmap <leader>nn :call SwitchNumbering()<CR>
 
-" atttempt to reformat horrible code
+" Atttempt to reformat horrible code
 function! FixLeCode()
   " replace in  =/==/===/=> without spaces, to wrap it with spaces.
   :%s/\(!\|+\|-\|\.\|=\|<\|>\)\@<!\(=\|==\|===\|=>\)\( \|>\|=\)\@!/ \2 /g
@@ -169,6 +188,13 @@ function! AppendModeline()
   call append(line("^"), l:modeline)
 endfunction
 nnoremap <silent> <Leader>ml :call AppendModeline()<CR>
+
+" Remove whitespace from code files on save
+function! StripTrailingWhite()
+  let l:winview = winsaveview()
+  silent! %s/\s\+$//
+  call winrestview(l:winview)
+endfunction
 
 " Markdown
 augroup mkd
