@@ -19,7 +19,7 @@ autocmd FileType make setlocal noexpandtab
 autocmd BufRead,BufNewFile,BufEnter *.json set ft=javascript
 autocmd BufRead,BufNewFile,BufEnter *.ejs set ft=html
 autocmd BufRead,BufNewFile,BufEnter *.tt2 set ft=tt2html
-autocmd BufRead,BufNewFile,BufEnter */templates-3.0/**.html set ft=tt2
+autocmd BufRead,BufNewFile,BufEnter */repos/templates/**.html set ft=tt2
 autocmd BufWritePre *.{php,py,pl,js,css,html} call StripTrailingWhite()
 
 " Enable syntax highlighting
