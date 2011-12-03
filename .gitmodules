@@ -58,3 +58,6 @@
 [submodule "vim/.vim/bundle/vim-taglist-plus"]
 	path = vim/.vim/bundle/vim-taglist-plus
 	url = https://github.com/int3/vim-taglist-plus.git
+[submodule "vim/.vim/bundle/vim-matchtag"]
+	path = vim/.vim/bundle/vim-matchtag
+	url = https://github.com/gregsexton/MatchTag.git
