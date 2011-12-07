@@ -61,3 +61,9 @@
 [submodule "vim/.vim/bundle/vim-matchtag"]
 	path = vim/.vim/bundle/vim-matchtag
 	url = https://github.com/gregsexton/MatchTag.git
+[submodule "git/git-extras"]
+	path = git/git-extras
+	url = https://github.com/visionmedia/git-extras.git
+[submodule "git/git-masspull"]
+	path = git/git-masspull
+	url = https://github.com/Swaagie/git-masspull.git
