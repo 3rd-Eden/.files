@@ -67,3 +67,6 @@
 [submodule "git/git-masspull"]
 	path = git/git-masspull
 	url = https://github.com/Swaagie/git-masspull.git
+[submodule "vim/.vim/bundle/vim-nodejs-shebang"]
+	path = vim/.vim/bundle/vim-nodejs-shebang
+	url = https://github.com/mmalecki/vim-node.js.git
