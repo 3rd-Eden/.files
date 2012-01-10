@@ -73,3 +73,6 @@
 [submodule "vim/.vim/bundle/vim-nodejs-errorformat"]
 	path = vim/.vim/bundle/vim-nodejs-errorformat
   url = https://github.com/felixge/vim-nodejs-errorformat.git
+[submodule "zsh/ohmy"]
+	path = zsh/ohmy
+	url = https://github.com/robbyrussell/oh-my-zsh.git

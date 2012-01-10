@@ -20,7 +20,7 @@ autocmd BufRead,BufNewFile,BufEnter *.json set ft=javascript
 autocmd BufRead,BufNewFile,BufEnter *.ejs set ft=html
 autocmd BufRead,BufNewFile,BufEnter *.tt2 set ft=tt2html
 autocmd BufRead,BufNewFile,BufEnter */repos/templates/**.html set ft=tt2
-autocmd BufWritePre *.{php,py,pl,js,css,html} call StripTrailingWhite()
+autocmd BufWritePre *.{json,styl,jade,php,py,pl,js,css,html} call StripTrailingWhite()
 
 " Enable syntax highlighting
 syntax enable
@@ -237,11 +237,15 @@ if has('gui_running')
   hi Todo gui=undercurl
 endif
 
+" better macvim support
 if has('gui_macvim')
   behave xterm
   set selectmode=
   set keymodel=
   set mousemodel=popup_setpos
 endif
+
+" map the :make command to ,, and have it auto open the quickfix window
+nmap <Leader><Leader> :w<CR>:make! \| botright cwindow<CR>
 
 syntax on
