@@ -2,7 +2,7 @@
 ZSH=$HOME/.oh-my-zsh
 
 # My custom zsh files
-export ZSH_CUSTOM=$HOME/.zsh/
+# export ZSH_CUSTOM=$HOME/.zsh/
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
