@@ -76,3 +76,6 @@
 [submodule "zsh/ohmy"]
 	path = zsh/ohmy
 	url = https://github.com/robbyrussell/oh-my-zsh.git
+[submodule "vim/.vim/bundle/vim-pasta"]
+	path = vim/.vim/bundle/vim-pasta
+	url = https://github.com/sickill/vim-pasta.git
