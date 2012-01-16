@@ -126,6 +126,9 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
+" sudo write access
+command W w !sudo tee % > /dev/null
+
 " Disable autoindenting
 nnoremap <leader>ni :setl noai nocin nosi inde=<CR>
 
