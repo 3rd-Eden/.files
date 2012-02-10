@@ -1,5 +1,7 @@
 {
-    "node": true
-  , "browser": true
-  , "laxcomma": true
+    "node": true                  // ignore globals that are set in Node.js
+  , "browser": true               // ignore globals that are set in the browser
+  , "laxcomma": true              // comma first
+  , "laxbreak": true              // allow foo ? bar : baz to span multiple lines
+  , "proto": true                 // allow __proto__ to be used
 }
