@@ -21,6 +21,12 @@ autocmd BufRead,BufNewFile,BufEnter *.ejs set ft=html
 autocmd BufRead,BufNewFile,BufEnter *.tt2 set ft=tt2html
 autocmd BufWritePre *.{json,styl,jade,php,py,pl,js,css,html} call StripTrailingWhite()
 
+" Set the correct syntax checker for the files
+let g:syntastic_enable_signs=0
+let g:syntastic_auto_jump=1
+let g:syntastic_auto_loc_list=1
+let g:syntastic_stl_format=' [%E{Err: %fe #%e}%B{, }%W{Warn: %fw #%w}]'
+
 " Enable syntax highlighting
 syntax enable
 
@@ -53,6 +59,18 @@ set backspace=indent,eol,start
 " Status bar
 set laststatus=2
 set statusline=%F\ %m\ %{fugitive#statusline()}\ %y%=%l,%c\ %P
+
+" Warn on syntax errors
+set statusline+=%#warningmsg#%{SyntasticStatuslineFlag()}%*
+
+" Warn if fileformat isn't Unix
+set statusline+=%#warningmsg#%{&ff!='unix'?'['.&ff.']':''}%*
+
+" Warn if file encoding isn't UTF-8
+set statusline+=%#warningmsg#%{(&fenc!='utf-8'&&&fenc!='')?'['.&fenc.']':''}%*
+
+" Warn if paste is enabled
+set statusline+=%#warningmsg#%{&paste?'[paste]':''}%*
 
 " Line numbers relative to current position
 set relativenumber
