@@ -106,3 +106,6 @@
 	path = vim/.vim/bundle/vim-pasta
 	url = https://github.com/sickill/vim-pasta.git
 	ignore = dirty
+[submodule "vim/.vim/bundle/syntastic"]
+	path = vim/.vim/bundle/syntastic
+	url = https://github.com/scrooloose/syntastic.git
