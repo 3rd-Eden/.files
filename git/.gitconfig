@@ -38,6 +38,7 @@
   lol = log --graph --decorate --pretty=oneline --abbrev-commit
   lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
   ls = ls-files
+  pup = "!git pull upstream master && git push"
 
   ; Show files ignored by git
   ign = ls-files -o -i --exclude-standard

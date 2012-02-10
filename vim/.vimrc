@@ -19,7 +19,6 @@ autocmd FileType make setlocal noexpandtab
 autocmd BufRead,BufNewFile,BufEnter *.json set ft=javascript
 autocmd BufRead,BufNewFile,BufEnter *.ejs set ft=html
 autocmd BufRead,BufNewFile,BufEnter *.tt2 set ft=tt2html
-autocmd BufRead,BufNewFile,BufEnter */repos/templates/**.html set ft=tt2
 autocmd BufWritePre *.{json,styl,jade,php,py,pl,js,css,html} call StripTrailingWhite()
 
 " Enable syntax highlighting
@@ -127,7 +126,7 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
 " sudo write access
-command W w !sudo tee % > /dev/null
+command! W w !sudo tee % > /dev/null
 
 " Disable autoindenting
 nnoremap <leader>ni :setl noai nocin nosi inde=<CR>
