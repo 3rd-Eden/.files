@@ -4,4 +4,8 @@
   , "laxcomma": true              // comma first
   , "laxbreak": true              // allow foo ? bar : baz to span multiple lines
   , "proto": true                 // allow __proto__ to be used
+  , "predef": [                   // pre-defined globals that are use commonly
+        "_"
+      , "logger"
+    ]
 }
