@@ -1,8 +1,11 @@
 {
     "node": true                  // ignore globals that are set in Node.js
   , "browser": true               // ignore globals that are set in the browser
-  , "laxcomma": true              // comma first
+  , "jQuery": true                // predefine jQuery's globals
+  , "laxcomma": true              // allow comma first
+  , "evil": true                  // allow evil code execution
   , "laxbreak": true              // allow foo ? bar : baz to span multiple lines
+  , "supernew": true              // allow new function and new Object;
   , "proto": true                 // allow __proto__ to be used
   , "predef": [                   // pre-defined globals that are use commonly
         "_"
