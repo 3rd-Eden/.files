@@ -22,6 +22,9 @@ autocmd BufRead,BufNewFile,BufEnter *.tt2 set ft=tt2html
 autocmd BufWritePre *.{json,styl,jade,php,py,pl,js,css,html} call StripTrailingWhite()
 autocmd FileType gitcommit DiffGitCached | wincmd p
 
+" Go back to the line where you last edited it
+au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|else|exe "norm $"|endif|endif
+
 " Set the correct syntax checker for the files
 let g:syntastic_enable_signs=0
 let g:syntastic_auto_jump=1
