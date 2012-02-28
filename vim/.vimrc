@@ -77,8 +77,14 @@ set statusline+=%#warningmsg#%{(&fenc!='utf-8'&&&fenc!='')?'['.&fenc.']':''}%*
 " Warn if paste is enabled
 set statusline+=%#warningmsg#%{&paste?'[paste]':''}%*
 
-" Line numbers relative to current position
-set relativenumber
+" change to relative and absolute numbering based on the mode
+if exists("&relativenumber")
+  set relativenumber
+  silent! autocmd InsertEnter * :set number
+  silent! autocmd InsertLeave * :set relativenumber
+  silent! au FocusLost * :set number
+  silent! au FocusGained * :set relativenumber
+endif
 
 let mapleader = ","
 let g:gist_clip_command = 'pbcopy'
