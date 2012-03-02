@@ -108,6 +108,3 @@
 [submodule "vim/.vim/bundle/vim-repeat"]
 	path = vim/.vim/bundle/vim-repeat
 	url = https://github.com/tpope/vim-repeat
-[submodule "vim/.vim/bundle/vim-js-syntax"]
-	path = vim/.vim/bundle/vim-js-syntax
-	url = https://www.github.com/3rd-Eden/vim-javascript.git
