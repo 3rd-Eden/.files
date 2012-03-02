@@ -20,7 +20,7 @@ autocmd BufRead,BufNewFile,BufEnter *.json set ft=javascript
 autocmd BufRead,BufNewFile,BufEnter *.ejs set ft=html
 autocmd BufRead,BufNewFile,BufEnter *.tt2 set ft=tt2html
 autocmd BufWritePre *.{json,styl,jade,php,py,pl,js,css,html} call StripTrailingWhite()
-autocmd FileType gitcommit DiffGitCached | wincmd p
+autocmd FileType gitcommit DiffGitCached | wincmd P | wincmd L | wincmd p
 
 " Go back to the line where you last edited it
 au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|else|exe "norm $"|endif|endif
@@ -78,13 +78,7 @@ set statusline+=%#warningmsg#%{(&fenc!='utf-8'&&&fenc!='')?'['.&fenc.']':''}%*
 set statusline+=%#warningmsg#%{&paste?'[paste]':''}%*
 
 " change to relative and absolute numbering based on the mode
-if exists("&relativenumber")
-  set relativenumber
-  silent! autocmd InsertEnter * :set number
-  silent! autocmd InsertLeave * :set relativenumber
-  silent! au FocusLost * :set number
-  silent! au FocusGained * :set relativenumber
-endif
+set relativenumber
 
 let mapleader = ","
 let g:gist_clip_command = 'pbcopy'
