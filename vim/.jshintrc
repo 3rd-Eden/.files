@@ -2,6 +2,7 @@
     "node": true                  // ignore globals that are set in Node.js
   , "browser": true               // ignore globals that are set in the browser
   , "jQuery": true                // predefine jQuery's globals
+  , "globalstrict": true          // allow global strict mode
   , "laxcomma": true              // allow comma first
   , "evil": true                  // allow evil code execution
   , "laxbreak": true              // allow foo ? bar : baz to span multiple lines
@@ -12,7 +13,9 @@
   , "boss": true                  // allow assignments in `if ()` statements
   , "noarg": true                 // disallow `arguments.callee`
   , "predef": [                   // pre-defined globals that are use commonly
-        "_"
-      , "logger"
+        "_"                       // -- underscore library
+      , "$"                       // -- jQuery library
+      , "logger"                  // -- global logger
+      , "should"                  // -- should.js assertation library
     ]
 }
