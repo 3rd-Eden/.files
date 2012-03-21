@@ -19,6 +19,7 @@ autocmd FileType make setlocal noexpandtab
 autocmd BufRead,BufNewFile,BufEnter *.json set ft=javascript
 autocmd BufRead,BufNewFile,BufEnter *.ejs set ft=html
 autocmd BufRead,BufNewFile,BufEnter *.tt2 set ft=tt2html
+autocmd BufRead,BufNewFile,BufEnter *.styl.css set ft=stylus
 autocmd BufWritePre *.{json,styl,jade,php,py,pl,js,css,html} call StripTrailingWhite()
 autocmd FileType gitcommit DiffGitCached | wincmd P | wincmd L | wincmd p
 
