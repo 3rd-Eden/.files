@@ -111,3 +111,6 @@
 [submodule "vim/.vim/bundle/vim-javascript"]
 	path = vim/.vim/bundle/vim-javascript
 	url = git://github.com/3rd-Eden/vim-javascript.git
+[submodule "tools/spot"]
+	path = tools/spot
+	url = https://github.com/guille/spot.git

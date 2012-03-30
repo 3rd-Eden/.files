@@ -7,6 +7,7 @@ install:
 	@git submodule update --recursive                                                  # download it's contents
 	@cp ./git/git-masspull/git-masspull $(PREFIX)/bin                                  # install gitmass pull
 	@cd ./git/git-extras && make install                                               # install git-extras
+	@cd ./tools/spot && make install                                                   # install spot search util
 	@cd ./zsh/ohmy/tools && sh install.sh                                              # install zsh
 
 # update and all symlinks
