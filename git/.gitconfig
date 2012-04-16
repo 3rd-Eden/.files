@@ -1,6 +1,6 @@
 ; Make sure our commits are correctly tagged with our name
 [user]
-  name = Arnout Kazemier
+  name = 3rdEden
   email = info@3rd-Eden.com
 
 ; Fix the editor path in Mac OSX lion and show whitespace
