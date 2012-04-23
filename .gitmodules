@@ -114,3 +114,6 @@
 [submodule "tools/spot"]
 	path = tools/spot
 	url = https://github.com/guille/spot.git
+[submodule "vim/.vim/bundle/vitality"]
+	path = vim/.vim/bundle/vitality
+	url = https://github.com/sjl/vitality.vim.git
