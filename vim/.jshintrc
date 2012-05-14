@@ -17,5 +17,8 @@
       , "$"                       // -- jQuery library
       , "logger"                  // -- global logger
       , "should"                  // -- should.js assertation library
+      , "describe"                // -- BDD unit tests
+      , "it"                      // -- BDD unit tests
+      , "Backbone"                // -- backbone.js mvc library
     ]
 }
