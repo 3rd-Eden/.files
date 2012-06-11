@@ -117,3 +117,6 @@
 [submodule "vim/.vim/bundle/vitality"]
 	path = vim/.vim/bundle/vitality
 	url = https://github.com/sjl/vitality.vim.git
+[submodule "tools/dotjs"]
+	path = tools/dotjs
+	url = https://github.com/defunkt/dotjs.git
