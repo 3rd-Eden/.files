@@ -1,35 +1,55 @@
-# Path to your oh-my-zsh configuration.
+##
+## PERSONAL INFORMATION
+##
+
+export NAME='Arnout Kazemier'
+export EMAIL='info@3rd-Eden.com'
+
+
+##
+## COLORING & THEMES
+##
+
+export ZSH_THEME='pengwynn'
+zstyle -e ':completion:*:default' list-colors 'reply=("${PREFIX:+=(#bi)($PREFIX:t)(?)*==34=34}:${(s.:.)LS_COLORS}")'
+
+##
+## HISTORY
+##
+
+export HISTFILE='~/.zshhistory'
+export HISTFILESIZE=65536
+export HISTSIZE=4096
+export SAVEHIST=$HISTSIZE
+
+
+##
+## ALIASES & APPLICATION DEFAULTS
+##
+
+#ls
+alias ls='ls --color=auto --group-directories-first --classify --human-readable'
+alias ll='ls --color=auto --group-directories-first --classify --human-readable -l'
+alias la='ls --color=auto --group-directories-first --classify --human-readable -l --almost-all'
+
+# cp/mv/rm
+alias cp='nocorrect cp -i'
+alias mv='nocorrect mv -i'
+alias rm='nocorrect rm -i'
+
+export EDITOR=vim
+export GREP_OPTIONS='--color=auto --exclude="*.pyc" --exclude-dir=".svn" --exclude-dir=".hg" --exclude-dir=".bzr" --exclude-dir=".git"'
+##
+## OH MY ZSH CONFIGURATIONS
+##
+
 ZSH=$HOME/.oh-my-zsh
-
-# My custom zsh files
-# export ZSH_CUSTOM=$HOME/.zsh/
-
-# Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
-export ZSH_THEME="pengwynn"
-
-# Set to this to use case-sensitive completion
-# CASE_SENSITIVE="true"
-
-# Comment this out to disable weekly auto-update checks
 DISABLE_AUTO_UPDATE="true"
-
-# Uncomment following line if you want to disable colors in ls
-# DISABLE_LS_COLORS="true"
-
-# Uncomment following line if you want to disable autosetting terminal title.
-# DISABLE_AUTO_TITLE="true"
-
-# Uncomment following line if you want disable red dots displayed while waiting for completion
-# DISABLE_COMPLETION_WAITING_DOTS="true"
-
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(git github node npm osx)
-
 source $ZSH/oh-my-zsh.sh
 
-# Customize to your needs...
+
+##
+## PATH
+##
 export PATH=/opt/bin:/opt/local/bin:/opt/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:$PATH
