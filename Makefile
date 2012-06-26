@@ -23,7 +23,7 @@ symlink:
 	@ln -s -f $(CURDIR)/git/.gitconfig $(HOME)                                         # add the global gitignore
 	@ln -s -f $(CURDIR)/vim/.vimrc $(HOME)                                             # add the .vimrc
 	@ln -s -f $(CURDIR)/vim/.vim $(HOME)                                               # add the .vim directory
-	@ln -s -f $(CURDIR)/vim/.jshintrc $(HOME)                                          # add the .jshintrc
+	@ln -s -f $(CURDIR)/.jshintrc $(HOME)                                              # add the .jshintrc
 	@ln -s -f $(CURDIR)/.js $(HOME)                                                    # add the .js folder
 
 uninstall:
