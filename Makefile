@@ -1,6 +1,8 @@
 PREFIX ?= /usr/local
 HOME ?= ~/
 
+target: dependencies install symlink
+
 # install dependencies for the installation
 dependencies:
 	@gem install rake                                                                  # required for dotjs
@@ -9,7 +11,9 @@ dependencies:
 install:
 	@git submodule init                                                                # init submodules
 	@git submodule update --recursive                                                  # download it's contents
-	@cp ./git/git-masspull/git-masspull $(PREFIX)/bin                                  # install gitmass pull
+	@cp ./tools/n/bin/n $(PREFIX)/bin                                                  # install n for node.js version management
+	@n stable                                                                          # install the latest node.js stableA
+	@curl http://npmjs.org/install.sh | sh                                             # install npm, node package management
 	@cd ./git/git-extras && make install                                               # install git-extras
 	@cd ./tools/spot && make install                                                   # install spot search util
 	@cd ./tools/dotjs && rake install                                                  # install .js folder extenstion
@@ -29,5 +33,6 @@ symlink:
 uninstall:
 	@uninstall_oh_my_zsh                                                               # remove zsh again
 	@cd ./tools/dotjs && rake uninstall                                                # remove dotjs again
+	@cd ./tools/n && make uninstall                                                    # remove n
 
 .PHONY: symlink install uninstall

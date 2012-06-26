@@ -120,3 +120,6 @@
 [submodule "tools/dotjs"]
 	path = tools/dotjs
 	url = https://github.com/defunkt/dotjs.git
+[submodule "tools/n"]
+	path = tools/n
+	url = git://github.com/visionmedia/n.git
