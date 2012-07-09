@@ -27,8 +27,7 @@ autocmd FileType gitcommit DiffGitCached | wincmd P | wincmd L | wincmd p
 au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|else|exe "norm $"|endif|endif
 
 " Set the correct syntax checker for the files
-let g:syntastic_enable_signs=0
-let g:syntastic_auto_jump=1
+let g:syntastic_check_on_open=1
 let g:syntastic_auto_loc_list=1
 let g:syntastic_stl_format=' [%E{Err: %fe #%e}%B{, }%W{Warn: %fw #%w}]'
 let g:syntastic_javascript_checker = 'jshint'
@@ -154,9 +153,6 @@ command! W w !sudo tee % > /dev/null
 
 " Disable autoindenting
 nnoremap <leader>ni :setl noai nocin nosi inde=<CR>
-
-" map refresh running browser to r
-nnoremap <silent><leader>r :RRB<CR>
 
 " Color scheme and highlighting
 colorscheme molokai
