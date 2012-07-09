@@ -29,8 +29,15 @@ au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|
 " Set the correct syntax checker for the files
 let g:syntastic_check_on_open=1
 let g:syntastic_auto_loc_list=1
+let g:syntastic_loc_list_height=5
 let g:syntastic_stl_format=' [%E{Err: %fe #%e}%B{, }%W{Warn: %fw #%w}]'
 let g:syntastic_javascript_checker = 'jshint'
+
+" Set the :sign's for syntastic, so it won't use the ugly >>
+sign define SyntasticError text=✗ texthl=error
+sign define SyntasticWarning text=⚠ texthl=todo
+sign define SyntasticStyleError text=✗ texthl=error
+sign define SyntasticStyleWarning text=⚠  texthl=todo
 
 " Enable syntax highlighting
 syntax enable
@@ -156,6 +163,7 @@ nnoremap <leader>ni :setl noai nocin nosi inde=<CR>
 
 " Color scheme and highlighting
 colorscheme molokai
+hi Error ctermbg=9 ctermfg=15
 
 " TagList shortcuts
 map <leader>t :TlistToggle<CR>

@@ -115,3 +115,6 @@
 [submodule "tools/n"]
 	path = tools/n
 	url = git://github.com/visionmedia/n.git
+[submodule "vim/.vim/bundle/xterm-color-table.vim"]
+	path = vim/.vim/bundle/xterm-color-table.vim
+	url = git://github.com/guns/xterm-color-table.vim.git
