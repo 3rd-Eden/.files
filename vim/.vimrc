@@ -33,12 +33,6 @@ let g:syntastic_loc_list_height=5
 let g:syntastic_stl_format=' [%E{Err: %fe #%e}%B{, }%W{Warn: %fw #%w}]'
 let g:syntastic_javascript_checker = 'jshint'
 
-" Set the :sign's for syntastic, so it won't use the ugly >>
-sign define SyntasticError text=✗ texthl=error
-sign define SyntasticWarning text=⚠ texthl=todo
-sign define SyntasticStyleError text=✗ texthl=error
-sign define SyntasticStyleWarning text=⚠  texthl=todo
-
 " Enable syntax highlighting
 syntax enable
 
@@ -163,7 +157,6 @@ nnoremap <leader>ni :setl noai nocin nosi inde=<CR>
 
 " Color scheme and highlighting
 colorscheme molokai
-hi Error ctermbg=9 ctermfg=15
 
 " TagList shortcuts
 map <leader>t :TlistToggle<CR>
@@ -279,3 +272,11 @@ endif
 nmap <Leader><Leader> :w<CR>:make! \| botright cwindow<CR>
 
 syntax on
+
+hi Error ctermbg=9 ctermfg=15
+
+" Set the :sign's for syntastic, so it won't use the ugly >>
+sign define SyntasticError text=✗ texthl=error
+sign define SyntasticWarning text=⚠ texthl=todo
+sign define SyntasticStyleError text=✗ texthl=error
+sign define SyntasticStyleWarning text=⚠  texthl=todo
