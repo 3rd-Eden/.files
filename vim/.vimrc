@@ -32,6 +32,8 @@ let g:syntastic_auto_loc_list=1
 let g:syntastic_loc_list_height=5
 let g:syntastic_stl_format=' [%E{Err: %fe #%e}%B{, }%W{Warn: %fw #%w}]'
 let g:syntastic_javascript_checker = 'jshint'
+let g:syntastic_error_symbol='✗'
+let g:syntastic_warning_symbol='⚠'
 
 " Enable syntax highlighting
 syntax enable
@@ -273,10 +275,6 @@ nmap <Leader><Leader> :w<CR>:make! \| botright cwindow<CR>
 
 syntax on
 
+" change the color of the errors, because it's purple bg with pink text by
+" default... 
 hi Error ctermbg=9 ctermfg=15
-
-" Set the :sign's for syntastic, so it won't use the ugly >>
-sign define SyntasticError text=✗ texthl=error
-sign define SyntasticWarning text=⚠ texthl=todo
-sign define SyntasticStyleError text=✗ texthl=error
-sign define SyntasticStyleWarning text=⚠  texthl=todo
