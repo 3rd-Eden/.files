@@ -1,25 +1,54 @@
 PREFIX ?= /usr/local
 HOME ?= ~/
 
-target: dependencies install symlink
+target: symlink
 
-# install dependencies for the installation
+# Dependencies:
+# These pieces of software are required for the full installation of all the
+# required code.
+#
+# @TODO automatically install mac ports
+# @TODO automatically install and configure VIM with clipboard support
 dependencies:
-	@gem install rake                                                                  # required for dotjs
+# rake is required for the .dotjs chrome extension, and might be commonly used
+# by other software as it's an alternate to Make
+ifeq ($(shell which rake), )
+	@sudo gem install rake
+endif
 
-# install all the shizzle
+# Exuberant Ctags is required for the vim tag list plugin, it's an updated
+# version of ctags that is shipped on unix by default.
+ifeq ($(shell which port), )
+	@sudo port install ctags
+endif
+
+# Make sure we have curl installed
+ifeq ($(shell which curl), )
+	@sudo port install curl
+endif
+
+# Installation:
+# Install all the .sh files and git submodules so our env. will be a bit easier
+# to work with, and it will look pretty as well <3.
+#
+# @TODO install jshint for syntasic (npm install jshint -g)
+# @TODO install csslint for syntastic (npm install csshint -g)
 install:
+	@$(MAKE) dependencies                                                              # install the dependencies
 	@git submodule init                                                                # init submodules
 	@git submodule update --recursive                                                  # download it's contents
-	@cp ./tools/n/bin/n $(PREFIX)/bin                                                  # install n for node.js version management
-	@n stable                                                                          # install the latest node.js stableA
-	@curl http://npmjs.org/install.sh | sh                                             # install npm, node package management
-	@cd ./git/git-extras && make install                                               # install git-extras
-	@cd ./tools/spot && make install                                                   # install spot search util
+	@sudo cp ./tools/n/bin/n $(PREFIX)/bin                                             # install n for node.js version management
+	@sudo n stable                                                                     # install the latest node.js stableA
+	@curl http://npmjs.org/install.sh | sudo sh                                        # install npm, node package management
+	@cd ./git/git-extras && sudo make install                                          # install git-extras
+	@cd ./tools/spot && sudo make install                                              # install spot search util
 	@cd ./tools/dotjs && rake install                                                  # install .js folder extenstion
-	@cd ./zsh/ohmy/tools && sh install.sh                                              # install zsh
+	@rm -rf $(HOME)/.oh-my-zsh && cd ./zsh/ohmy/tools && sh install.sh                 # install zsh
+	@$(MAKE) symlink                                                                   # install all the symlinks
 
-# update and all symlinks
+# Symlinking:
+# Update the symlinks to all the possible .dot files so they are used from this
+# directory and not an other one.
 symlink:
 	@ln -s -f $(CURDIR)/zsh/.zshrc $(HOME)                                             # add the .zshrc
 	@ln -s -f $(CURDIR)/zsh/.zsh $(HOME)                                               # add the .zsh custom plugins
@@ -35,4 +64,4 @@ uninstall:
 	@cd ./tools/dotjs && rake uninstall                                                # remove dotjs again
 	@cd ./tools/n && make uninstall                                                    # remove n
 
-.PHONY: symlink install uninstall
+.PHONY: symlink install uninstall dependencies
