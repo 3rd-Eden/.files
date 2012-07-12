@@ -50,6 +50,7 @@ set expandtab
 
 set nocompatible
 set title
+" Use the Mac OSX clipboard by default
 set clipboard=unnamed
 set encoding=utf-8
 set scrolloff=3
@@ -65,6 +66,10 @@ set gdefault
 set ttyfast
 set ruler
 set backspace=indent,eol,start
+
+" Don’t add empty newlines at the end of files
+set binary
+set noeol
 
 " Status bar
 set laststatus=2
