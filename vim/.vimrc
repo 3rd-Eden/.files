@@ -37,6 +37,7 @@ let g:syntastic_warning_symbol='⚠'
 
 " Enable syntax highlighting
 syntax enable
+set nocompatible
 
 " Respect modelines in files
 set modeline
@@ -48,7 +49,6 @@ set shiftwidth=2
 set softtabstop=2
 set expandtab
 
-set nocompatible
 set title
 " Use the Mac OSX clipboard by default
 set clipboard=unnamed
@@ -68,7 +68,6 @@ set ruler
 set backspace=indent,eol,start
 
 " Don’t add empty newlines at the end of files
-set binary
 set noeol
 
 " Status bar
