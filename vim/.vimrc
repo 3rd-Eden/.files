@@ -38,8 +38,9 @@ let g:syntastic_warning_symbol='⚠'
 " Enable syntax highlighting
 syntax enable
 
-set nocompatible
-set modelines=0
+" Respect modelines in files
+set modeline
+set modelines=4
 
 " Tabbing settings
 set tabstop=2
@@ -47,6 +48,7 @@ set shiftwidth=2
 set softtabstop=2
 set expandtab
 
+set nocompatible
 set title
 set clipboard=unnamed
 set encoding=utf-8
