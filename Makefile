@@ -1,5 +1,6 @@
 PREFIX ?= /usr/local
 HOME ?= ~/
+MACPORTS ?= $(shell which port)
 
 target: symlink
 
@@ -13,17 +14,20 @@ dependencies:
 # rake is required for the .dotjs chrome extension, and might be commonly used
 # by other software as it's an alternate to Make
 ifeq ($(shell which rake), )
+	@echo "  - Installing rake"
 	@sudo gem install rake
 endif
 
 # Exuberant Ctags is required for the vim tag list plugin, it's an updated
 # version of ctags that is shipped on unix by default.
-ifeq ($(shell which port), )
+ifneq ($(shell which port), )
+	@echo "  - Installing Exuberant ctags"
 	@sudo port install ctags
 endif
 
 # Make sure we have curl installed
 ifeq ($(shell which curl), )
+	@echo "  - Installing curl"
 	@sudo port install curl
 endif
 
@@ -42,7 +46,9 @@ install:
 	@curl http://npmjs.org/install.sh | sudo sh                                        # install npm, node package management
 	@cd ./git/git-extras && sudo make install                                          # install git-extras
 	@cd ./tools/spot && sudo make install                                              # install spot search util
+ifeq ($(shell which rake), )
 	@cd ./tools/dotjs && rake install                                                  # install .js folder extenstion
+endif
 	@rm -rf $(HOME)/.oh-my-zsh && cd ./zsh/ohmy/tools && sh install.sh                 # install zsh
 	@$(MAKE) symlink                                                                   # install all the symlinks
 
