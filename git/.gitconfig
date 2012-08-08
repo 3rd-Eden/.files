@@ -37,6 +37,7 @@
   lg = log -p
   lol = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
   lola = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --all
+  ff = merge --ff-only
   ls = ls-files
   pup = "!git pull upstream master && git push"
 
