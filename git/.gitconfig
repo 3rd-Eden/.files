@@ -39,7 +39,12 @@
   lola = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --all
   ff = merge --ff-only
   ls = ls-files
+
+  ; Regulur pull/push from upstream repositories
   pup = "!git pull upstream master && git push"
+
+  ; Shortcut for git fetch and ff
+  fff = "!git fetch && git ff $1"
 
   ; Show files ignored by git
   ign = ls-files -o -i --exclude-standard
