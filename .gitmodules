@@ -118,3 +118,6 @@
 [submodule "vim/.vim/bundle/syntastic"]
 	path = vim/.vim/bundle/syntastic
 	url = git@github.com:3rd-Eden/syntastic.git
+[submodule "vim/.vim/bundle/lucius-color"]
+	path = vim/.vim/bundle/lucius-color
+	url = git://github.com/jonathanfilip/vim-lucius.git
