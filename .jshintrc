@@ -1,7 +1,7 @@
 {
     "node": true                  // ignore globals that are set in Node.js
   , "browser": true               // ignore globals that are set in the browser
-  , "jQuery": true                // predefine jQuery's globals
+  , "jquery": true                // predefine jQuery's globals
   , "globalstrict": true          // allow global strict mode
   , "laxcomma": true              // allow comma first
   , "evil": true                  // allow evil code execution
