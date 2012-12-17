@@ -121,3 +121,6 @@
 [submodule "vim/.vim/bundle/lucius-color"]
 	path = vim/.vim/bundle/lucius-color
 	url = git://github.com/jonathanfilip/vim-lucius.git
+[submodule "themes/inspector.css"]
+	path = themes/inspector.css
+	url = https://gist.github.com/4316646.git

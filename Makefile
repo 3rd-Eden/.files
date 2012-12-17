@@ -41,9 +41,10 @@ install:
 	@$(MAKE) dependencies                                                              # install the dependencies
 	@git submodule init                                                                # init submodules
 	@git submodule update --recursive                                                  # download it's contents
+
 	@sudo cp ./tools/n/bin/n $(PREFIX)/bin                                             # install n for node.js version management
 	@sudo n stable                                                                     # install the latest node.js stableA
-	@curl https://npmjs.org/install.sh | sudo sh                                        # install npm, node package management
+	@curl https://npmjs.org/install.sh | sudo sh                                       # install npm, node package management
 	@cd ./git/git-extras && sudo make install                                          # install git-extras
 	@cd ./tools/spot && sudo make install                                              # install spot search util
 ifeq ($(shell which rake), )
@@ -65,9 +66,15 @@ symlink:
 	@ln -s -f $(CURDIR)/.jshintrc $(HOME)                                              # add the .jshintrc
 	@ln -s -f $(CURDIR)/.js $(HOME)                                                    # add the .js folder
 
+# Theme different programs
+theme:
+	@mv ~/Library/Application\ Support/Google/Chrome/Default/User\ StyleSheets/Custom.css ~/Library/Application\ Support/Google/Chrome/Default/User\ StyleSheets/Custom.backup.css
+	@cp themes/inspector.css/Custom.css ~/Library/Application\ Support/Google/Chrome/Default/User\ StyleSheets/Custom.css
+
 uninstall:
 	@uninstall_oh_my_zsh                                                               # remove zsh again
 	@cd ./tools/dotjs && rake uninstall                                                # remove dotjs again
 	@cd ./tools/n && make uninstall                                                    # remove n
+	@mv ~/Library/Application\ Support/Google/Chrome/Default/User\ StyleSheets/Custom.backup.css ~/Library/Application\ Support/Google/Chrome/Default/User\ StyleSheets/Custom.css
 
 .PHONY: symlink install uninstall dependencies
