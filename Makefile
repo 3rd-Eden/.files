@@ -47,6 +47,7 @@ install:
 	@curl https://npmjs.org/install.sh | sudo sh                                       # install npm, node package management
 	@cd ./git/git-extras && sudo make install                                          # install git-extras
 	@cd ./tools/spot && sudo make install                                              # install spot search util
+	@cd ./tools/watch && make install                                                  # install a watch utility
 ifeq ($(shell which rake), )
 	@cd ./tools/dotjs && rake install                                                  # install .js folder extenstion
 endif

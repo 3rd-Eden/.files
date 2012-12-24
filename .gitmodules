@@ -124,3 +124,6 @@
 [submodule "themes/inspector.css"]
 	path = themes/inspector.css
 	url = https://gist.github.com/4316646.git
+[submodule "tools/watch"]
+	path = tools/watch
+	url = git://github.com/visionmedia/watch.git
