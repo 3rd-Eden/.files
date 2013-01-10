@@ -5,7 +5,9 @@
 $(function boostrap() {
   'use strict';
 
-  // merge automagically
+  //
+  // For fun and giggles, replace the automatically with autoMAGICALLY.
+  //
   $('.merge-pr .mergeable. p.message').each(function each() {
     var message = $(this);
 
@@ -14,12 +16,17 @@ $(function boostrap() {
     );
   });
 
-  // dshaw-ify the github unicorn
+  //
+  // When a 500 error occures, dshaw-fy the unicorn.
+  //
   if (~$('title').html().toLowerCase().indexOf('unicorn')) {
     $('.container p img').css('-webkit-transform', 'scaleX(-1)');
   }
 
-  // show package.json under the tree view
+  //
+  // Add the package.json as preview to the page when viewing Node.js
+  // dependencies.
+  //
   var match = $('#slider .tree-browser a').filter(function () {
     return 'package.json' === $(this).text();
   });
@@ -44,4 +51,26 @@ $(function boostrap() {
     $('.tree-browser-wrapper').after(file);
     file.fadeIn();
   });
+
+  //
+  // Github doesn't support ?w=1 for pull requests, this fixes it
+  //
+  if (/\/files\?w\=1/.test(window.location.href)) {
+    $('div.meta', '#files').each(function () {
+      var meta = $(this)
+        , filename = meta.data('path');
+
+      // fetch the sha
+      var href = meta.find('.button-group a')[0].href
+        , base = href.slice(0, href.indexOf('/blob/'))
+        , sha = /blob\/([^]+?)\//g.exec(href)[1];
+
+      $.get(base +'/commit/'+ sha + '?w=1', function (res) {
+        var wmeta = $('#files div.meta[data-path="'+ filename +'"]', res);
+
+        // Replace the diff with with the cleaned file
+        meta.parent().replaceWith(wmeta.parent());
+      });
+    });
+  }
 });
