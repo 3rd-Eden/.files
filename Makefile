@@ -37,6 +37,7 @@ endif
 #
 # @TODO install jshint for syntasic (npm install jshint -g)
 # @TODO install csslint for syntastic (npm install csshint -g)
+# @TODO install jsontool (npm install jsontool -g)
 install:
 	@$(MAKE) dependencies                                                              # install the dependencies
 	@git submodule init                                                                # init submodules
