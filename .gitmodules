@@ -18,10 +18,6 @@
 	path = vim/.vim/bundle/delimitMate
 	url = https://github.com/Raimondi/delimitMate.git
 	ignore = dirty
-[submodule "vim/.vim/bundle/supertab"]
-	path = vim/.vim/bundle/supertab
-	url = https://github.com/ervandew/supertab.git
-	ignore = dirty
 [submodule "vim/.vim/bundle/gundo"]
 	path = vim/.vim/bundle/gundo
 	url = https://github.com/sjl/gundo.vim.git
@@ -127,3 +123,9 @@
 [submodule "tools/watch"]
 	path = tools/watch
 	url = git://github.com/visionmedia/watch.git
+[submodule "vim/.vim/bundle/YouCompleteMe"]
+	path = vim/.vim/bundle/YouCompleteMe
+	url = git://github.com/Valloric/YouCompleteMe.git
+[submodule "vim/.vim/bundle/nodejs-complete"]
+	path = vim/.vim/bundle/nodejs-complete
+	url = git://github.com/myhere/vim-nodejs-complete.git

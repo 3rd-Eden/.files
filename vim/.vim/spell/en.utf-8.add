@@ -83,3 +83,5 @@ Memcached
 memcached
 charCode
 semver
+UTF
+nummeric

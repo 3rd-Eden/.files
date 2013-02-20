@@ -20,7 +20,10 @@
       , "describe"                // -- BDD unit tests
       , "it"                      // -- BDD unit tests
       , "after"                   // -- BDD unit tests
+      , "afterEach"               // -- BDD unit tests
       , "before"                  // -- BDD unit tests
+      , "beforeEach"              // -- BDD unit tests
       , "Backbone"                // -- backbone.js mvc library
+      , "_gaq"                    // -- Google Analytics
     ]
 }
