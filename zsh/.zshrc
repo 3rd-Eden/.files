@@ -39,6 +39,7 @@ alias rm='nocorrect rm -i'
 
 export EDITOR=vim
 export GREP_OPTIONS='--color=auto --exclude="*.pyc" --exclude-dir=".svn" --exclude-dir=".hg" --exclude-dir=".bzr" --exclude-dir=".git"'
+
 ##
 ## OH MY ZSH CONFIGURATIONS
 ##
@@ -52,4 +53,4 @@ source $ZSH/oh-my-zsh.sh
 ##
 ## PATH
 ##
-export PATH=/opt/bin:/opt/local/bin:/opt/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:$PATH
+export PATH=/usr/local/bin:/opt/bin:/opt/local/bin:/opt/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:$PATH

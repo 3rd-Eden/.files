@@ -129,3 +129,6 @@
 [submodule "vim/.vim/bundle/nodejs-complete"]
 	path = vim/.vim/bundle/nodejs-complete
 	url = git://github.com/myhere/vim-nodejs-complete.git
+[submodule "vim/.vim/bundle/vim-gitgutter"]
+	path = vim/.vim/bundle/vim-gitgutter
+	url = git://github.com/airblade/vim-gitgutter.git
