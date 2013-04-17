@@ -49,8 +49,12 @@ DISABLE_AUTO_UPDATE="true"
 plugins=(git github node npm osx)
 source $ZSH/oh-my-zsh.sh
 
+##
+## Nodejitsu Configurations
+##
+export JITSU_TUNNEL='root@165.225.130.158'
 
 ##
 ## PATH
 ##
-export PATH=/usr/local/bin:/opt/bin:/opt/local/bin:/opt/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:$PATH
+export PATH=/usr/local/bin:/usr/local/sbin:/opt/bin:/opt/local/bin:/opt/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:$PATH
