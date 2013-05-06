@@ -10,7 +10,7 @@ export EMAIL='info@3rd-Eden.com'
 ## COLORING & THEMES
 ##
 
-export ZSH_THEME='pengwynn'
+export ZSH_THEME='3rdEden'
 zstyle -e ':completion:*:default' list-colors 'reply=("${PREFIX:+=(#bi)($PREFIX:t)(?)*==34=34}:${(s.:.)LS_COLORS}")'
 
 ##
