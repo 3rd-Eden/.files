@@ -44,7 +44,7 @@ install:
 	@git submodule update --recursive                                                  # download it's contents
 
 	@sudo cp ./tools/n/bin/n $(PREFIX)/bin                                             # install n for node.js version management
-	@sudo n stable                                                                     # install the latest node.js stableA
+#	@sudo n stable                                                                     # install the latest node.js stableA
 	@curl https://npmjs.org/install.sh | sudo sh                                       # install npm, node package management
 	@cd ./git/git-extras && sudo make install                                          # install git-extras
 	@cd ./tools/spot && sudo make install                                              # install spot search util
@@ -52,7 +52,7 @@ install:
 ifeq ($(shell which rake), )
 	@cd ./tools/dotjs && rake install                                                  # install .js folder extenstion
 endif
-	@rm -rf $(HOME)/.oh-my-zsh && cd ./zsh/ohmy/tools && sh install.sh                 # install zsh
+	@rm -rf $(HOME)/.oh-my-zsh && cd ./zsh/ohmy/tools && sh install.sh && cd ../../..  # install zsh
 	@$(MAKE) symlink                                                                   # install all the symlinks
 
 # Symlinking:
