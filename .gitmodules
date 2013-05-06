@@ -123,12 +123,6 @@
 [submodule "tools/watch"]
 	path = tools/watch
 	url = git://github.com/visionmedia/watch.git
-[submodule "vim/.vim/bundle/YouCompleteMe"]
-	path = vim/.vim/bundle/YouCompleteMe
-	url = git://github.com/Valloric/YouCompleteMe.git
-[submodule "vim/.vim/bundle/nodejs-complete"]
-	path = vim/.vim/bundle/nodejs-complete
-	url = git://github.com/myhere/vim-nodejs-complete.git
 [submodule "vim/.vim/bundle/vim-gitgutter"]
 	path = vim/.vim/bundle/vim-gitgutter
 	url = git://github.com/airblade/vim-gitgutter.git
