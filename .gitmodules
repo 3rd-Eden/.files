@@ -54,10 +54,6 @@
 	path = vim/.vim/bundle/flash
 	url = https://github.com/clones/vim-flash.git
 	ignore = dirty
-[submodule "vim/.vim/bundle/perl"]
-	path = vim/.vim/bundle/perl
-	url = https://github.com/petdance/vim-perl.git
-	ignore = dirty
 [submodule "vim/.vim/bundle/stylus"]
 	path = vim/.vim/bundle/stylus
 	url = https://github.com/wavded/vim-stylus.git
