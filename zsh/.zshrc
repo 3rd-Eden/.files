@@ -17,7 +17,7 @@ zstyle -e ':completion:*:default' list-colors 'reply=("${PREFIX:+=(#bi)($PREFIX:
 ## HISTORY
 ##
 
-export HISTFILE='~/.zshhistory'
+export HISTFILE='~/.zsh_history'
 export HISTFILESIZE=65536
 export HISTSIZE=4096
 export SAVEHIST=$HISTSIZE
@@ -50,11 +50,26 @@ plugins=(git github node npm osx)
 source $ZSH/oh-my-zsh.sh
 
 ##
-## Nodejitsu Configurations
+## Nodejitsu Configurations and other shizzle
 ##
-export JITSU_TUNNEL='root@165.225.130.158'
+export JITSU_TUNNEL='root@72.2.115.6'
+alias sujitsu='jitsu -j ~/.nodejitsuconf'
+
+##
+## European version of the registry
+##
+alias enpm='npm --registry http://registry.npmjs.eu'
 
 ##
 ## PATH
 ##
 export PATH=/usr/local/bin:/usr/local/sbin:/opt/bin:/opt/local/bin:/opt/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:$PATH
+
+##
+## Load NVM, should be done after PATH changes
+## 
+[[ -s /Users/V1/.nvm/nvm.sh ]] && . /Users/V1/.nvm/nvm.sh
+nvm use v0.10.15
+
+# added by travis gem
+source /Users/V1/.travis/travis.sh

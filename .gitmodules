@@ -128,3 +128,6 @@
 [submodule "vim/.vim/bundle/tern"]
 	path = vim/.vim/bundle/tern
 	url = https://github.com/marijnh/tern_for_vim.git
+[submodule "vim/.vim/bundle/dockerfile"]
+	path = vim/.vim/bundle/dockerfile
+	url = git@github.com:honza/dockerfile.vim.git

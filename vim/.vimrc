@@ -13,6 +13,9 @@ filetype plugin indent on
 " Omni completion
 set ofu=syntaxcomplete#Complete
 
+" Always enable spell check, my grammar is horrible
+set spell
+
 " Auto commands for easier file editing
 autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType make setlocal noexpandtab
@@ -39,7 +42,7 @@ let g:syntastic_warning_symbol='⚠'
 syntax enable
 set nocompatible
 
-" Respect modelines in files
+" Respect mode lines in files
 set modeline
 set modelines=4
 
@@ -77,7 +80,7 @@ set statusline=%F\ %m\ %{fugitive#statusline()}\ %y%=%l,%c\ %P
 " Warn on syntax errors
 set statusline+=%#warningmsg#%{SyntasticStatuslineFlag()}%*
 
-" Warn if fileformat isn't Unix
+" Warn if file format isn't Unix
 set statusline+=%#warningmsg#%{&ff!='unix'?'['.&ff.']':''}%*
 
 " Warn if file encoding isn't UTF-8
@@ -121,7 +124,7 @@ set mouse=a
 " Show list chars
 set list
 
-" List invisible chars same as Textmate
+" List invisible chars same as TextMate
 set listchars=tab:▸\ ,eol:¬
 noremap <leader>i :set list!<CR>
 
@@ -160,7 +163,7 @@ nnoremap <C-l> <C-w>l
 " sudo write access
 command! W w !sudo tee % > /dev/null
 
-" Disable autoindenting
+" Disable auto indenting
 nnoremap <leader>ni :setl noai nocin nosi inde=<CR>
 
 " Color scheme and highlighting
@@ -184,7 +187,7 @@ let Tlist_Max_Tag_Length=30
 " Search for diff separater stuff
 nnoremap <Leader>fd /^<<<<<<<\\|^=======\\|^>>>>>>><CR>
 
-" Allow swtiching between relative or normal line numbers
+" Allow switching between relative or normal line numbers
 function! SwitchNumbering()
   if &number && ! &relativenumber
     set relativenumber
@@ -194,14 +197,14 @@ function! SwitchNumbering()
 endfunction
 nmap <leader>nn :call SwitchNumbering()<CR>
 
-" Atttempt to reformat horrible code
+" Attempt to reformat horrible code
 function! FixLeCode()
   " replace in  =/==/===/=> without spaces, to wrap it with spaces.
   :%s/\(!\|+\|-\|\.\|=\|<\|>\)\@<!\(=\|==\|===\|=>\)\( \|>\|=\)\@!/ \2 /g
   :g/function/s/ = /=/g
 
   " place spaces behind the comma:
-  " @TODO this will kill any split, explode, or mysql queries you might have
+  " @TODO this will kill any split, explode, or MySQL queries you might have
   " :%s/, \@!/, /g
 
   " No spaces @ EOL

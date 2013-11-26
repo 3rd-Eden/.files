@@ -62,3 +62,8 @@
   ; Github url shortening
   ; https://github.com/blog/985-git-io-github-url-shortener
   shorten = "!sh -c 'curl -i http://git.io -F url=$1' -"
+  vomit = commit
+  comit = commit
+  push-it = "!git fetch && git stash && git rebase origin/master && git stash pop && git push"
+[push]
+  default = simple
