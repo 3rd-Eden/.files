@@ -56,9 +56,20 @@ export JITSU_TUNNEL='root@72.2.115.6'
 alias sujitsu='jitsu -j ~/.nodejitsuconf'
 
 ##
-## European version of the registry
+## Open in Sublime
+##
+alias sub='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
+
+##
+## Mirrors of the npm registries
 ##
 alias enpm='npm --registry http://registry.npmjs.eu'
+alias npmjitsu='npm --registry https://us.registry.nodejitsu.com'
+
+##
+## Github API tokens
+##
+export GITHUB_TOKEN='cf45cfca3f394a5a6e410d7fd6ddb363a6a8b665'
 
 ##
 ## PATH
@@ -69,7 +80,4 @@ export PATH=/usr/local/bin:/usr/local/sbin:/opt/bin:/opt/local/bin:/opt/local/sb
 ## Load NVM, should be done after PATH changes
 ## 
 [[ -s /Users/V1/.nvm/nvm.sh ]] && . /Users/V1/.nvm/nvm.sh
-nvm use v0.10.15
-
-# added by travis gem
-source /Users/V1/.travis/travis.sh
+nvm use v0.10.28

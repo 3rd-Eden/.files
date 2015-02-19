@@ -10,6 +10,7 @@
   , "proto": true                 // allow __proto__ to be used
   , "eqeqeq": true                // force === instead of ==
   , "es5": true                   // allow EcmaScript 5 syntax
+  , "esnext": true                // allow EcmaScript 6 syntax
   , "boss": true                  // allow assignments in `if ()` statements
   , "noarg": true                 // disallow `arguments.callee`
   , "predef": [                   // pre-defined globals that are use commonly
@@ -26,5 +27,7 @@
       , "Backbone"                // -- backbone.js mvc library
       , "_gaq"                    // -- Google Analytics
       , "Cortex"                  // -- Internal front-end framework from Nodejitsu
+      , "unescape"                // -- Used by browsers & node.
+      , "escape"                  // -- Ditto.
     ]
 }
