@@ -1,2 +1,4 @@
 .netrwhist
 .DS_Store
+node_modules
+.install.js.swp
