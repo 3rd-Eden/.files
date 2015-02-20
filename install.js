@@ -33,6 +33,8 @@ try {
 [
   'git-extras',
   'redis',
+  'ctags',
+  'docker',
   'vim'
 ].forEach(function install(name) {
   debug('Running brew install '+ name);
