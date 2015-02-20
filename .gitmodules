@@ -66,10 +66,6 @@
 	path = vim/.vim/bundle/vim-matchtag
 	url = https://github.com/gregsexton/MatchTag.git
 	ignore = dirty
-[submodule "git/git-extras"]
-	path = git/git-extras
-	url = https://github.com/visionmedia/git-extras.git
-	ignore = dirty
 [submodule "vim/.vim/bundle/vim-nodejs-shebang"]
 	path = vim/.vim/bundle/vim-nodejs-shebang
 	url = https://github.com/mmalecki/vim-node.js.git
@@ -92,18 +88,9 @@
 [submodule "vim/.vim/bundle/vim-javascript"]
 	path = vim/.vim/bundle/vim-javascript
 	url = git://github.com/3rd-Eden/vim-javascript.git
-[submodule "tools/spot"]
-	path = tools/spot
-	url = https://github.com/guille/spot.git
 [submodule "vim/.vim/bundle/vitality"]
 	path = vim/.vim/bundle/vitality
 	url = https://github.com/sjl/vitality.vim.git
-[submodule "tools/dotjs"]
-	path = tools/dotjs
-	url = https://github.com/defunkt/dotjs.git
-[submodule "tools/n"]
-	path = tools/n
-	url = git://github.com/visionmedia/n.git
 [submodule "vim/.vim/bundle/xterm-color-table.vim"]
 	path = vim/.vim/bundle/xterm-color-table.vim
 	url = git://github.com/guns/xterm-color-table.vim.git
@@ -116,15 +103,9 @@
 [submodule "themes/inspector.css"]
 	path = themes/inspector.css
 	url = https://gist.github.com/4316646.git
-[submodule "tools/watch"]
-	path = tools/watch
-	url = git://github.com/visionmedia/watch.git
 [submodule "vim/.vim/bundle/vim-gitgutter"]
 	path = vim/.vim/bundle/vim-gitgutter
 	url = git://github.com/airblade/vim-gitgutter.git
-[submodule "tools/tern"]
-	path = tools/tern
-	url = git://github.com/marijnh/tern.git
 [submodule "vim/.vim/bundle/tern"]
 	path = vim/.vim/bundle/tern
 	url = https://github.com/marijnh/tern_for_vim.git
