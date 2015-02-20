@@ -50,7 +50,8 @@ try {
   'jslint',
   'csslint',
   'uni',
-  'spot'
+  'spot',
+  'tj/watch'
 ].forEach(function install(name) {
   debug('Running npm install --global '+ name);
   npm(process.cwd()).install('--global '+ name);
