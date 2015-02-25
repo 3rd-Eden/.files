@@ -6,10 +6,6 @@
 	path = vim/.vim/bundle/snipmate-nodejs
 	url = https://github.com/jamescarr/snipmate-nodejs.git
 	ignore = dirty
-[submodule "vim/.vim/bundle/zen-coding"]
-	path = vim/.vim/bundle/zen-coding
-	url = https://github.com/mattn/zencoding-vim.git
-	ignore = dirty
 [submodule "vim/.vim/bundle/surround"]
 	path = vim/.vim/bundle/surround
 	url = https://github.com/tpope/vim-surround
@@ -73,10 +69,6 @@
 [submodule "vim/.vim/bundle/vim-nodejs-errorformat"]
 	path = vim/.vim/bundle/vim-nodejs-errorformat
   url = https://github.com/felixge/vim-nodejs-errorformat.git
-	ignore = dirty
-[submodule "zsh/ohmy"]
-	path = zsh/ohmy
-	url = https://github.com/robbyrussell/oh-my-zsh.git
 	ignore = dirty
 [submodule "vim/.vim/bundle/vim-pasta"]
 	path = vim/.vim/bundle/vim-pasta
