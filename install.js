@@ -46,14 +46,15 @@ try {
 // system.
 //
 [
-  'json',
-  'police',
+  'csslint',
   'jshint',
   'jslint',
-  'csslint',
-  'uni',
+  'json',
+  'licensing',
+  'police',
   'spot',
-  'tj/watch'
+  'tj/watch',
+  'uni'
 ].forEach(function install(name) {
   debug('Running npm install --global '+ name);
   npm(process.cwd()).install('--global '+ name);
