@@ -29,6 +29,6 @@
     "git-shizzle": "0.0.x",
     "kuler": "0.0.x",
     "npm-shizzle": "1.0.x",
-    "shelljs": "0.3.x"
+    "shelljs": "~0.7.5"
   }
 }
